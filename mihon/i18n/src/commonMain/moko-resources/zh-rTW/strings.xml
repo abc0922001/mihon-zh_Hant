@@ -348,6 +348,8 @@
     <string name="pref_show_reading_mode">閱讀模式提示</string>
     <string name="label_sources">來源</string>
     <string name="pref_webtoon_side_padding">頁緣留白</string>
+    <string name="pref_webtoon_vertical_navigator">對長條閱讀模式使用垂直導航器</string>
+    <string name="pref_webtoon_vertical_navigator_on_left">將垂直導航器設於左側</string>
     <string name="add_tracking">新增閱讀歷程</string>
     <string name="channel_new_chapters">章節更新</string>
     <string name="in_library">在書櫃中</string>
@@ -766,6 +768,16 @@
     <string name="ext_revoke_trust">復原對不明擴充套件的信任</string>
     <string name="manga_interval_expected_update_soon">即將</string>
     <string name="action_open_repo">開啟來源儲存庫</string>
+    <string name="extensionStores">擴充套件商店</string>
+    <string name="action.addExtensionStore">新增擴充套件商店</string>
+    <string name="extensionStoresScreen.emptyLabel">你尚未新增任何擴充套件商店</string>
+    <string name="extensionStoresScreen.addStore.title">新增擴充套件商店</string>
+    <string name="extensionStoresScreen.addStore.alreadyExists">此擴充套件商店已存在</string>
+    <string name="extensionStoresScreen.addStore.processing">正在處理…</string>
+    <string name="extensionStoresScreen.addStoreInput.inputLabel">商店索引網址</string>
+    <string name="extensionStoresScreen.addStoreDeeplink.bodyText">你是否要新增下方的擴充套件商店？</string>
+    <string name="extensionStoresScreen.deleteStore.title">刪除擴充套件商店</string>
+    <string name="extensionStoresScreen.deleteStore.body">你是否要刪除擴充套件商店「%1$s」(%2$s)？</string>
     <string name="pref_webtoon_disable_zoom_out">停用縮小</string>
     <string name="pref_display_profile">自訂顯示設定檔</string>
     <string name="action_add_anyway">仍要新增</string>
