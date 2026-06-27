@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE martif PUBLIC "ISO 12200:1999A//DTD MARTIF core (DXFcdV04)//EN" "TBXcdv04.dtd">
+<martif type="TBX" xml:lang="en">
+    <martifHeader>
+        <fileDesc>
+            <sourceDesc>
+                <p>Translate Toolkit</p>
+            </sourceDesc>
+        </fileDesc>
+    </martifHeader>
+    <text>
+        <body>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Scanlator</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>掃譯者</term></tig></langSet>
+                <note from="translator">參見 https://w.wiki/98EU</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>backup</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>備份</term></tig></langSet>
+            </termEntry>
+        </body>
+    </text>
+</martif>
