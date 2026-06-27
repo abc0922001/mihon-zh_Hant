@@ -11,13 +11,169 @@
     <text>
         <body>
             <termEntry>
+                <langSet xml:lang="en"><tig><term>App</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>應用程式</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>background</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>背景</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>backup</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>備份</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>block</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>封鎖</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>blocked</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>已封鎖</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>CA</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>憑證授權單位</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>certificate</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>憑證</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>code</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>程式碼</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>configure</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>設定</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>debug</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>偵錯</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>delete</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>刪除</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>domain</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>網域</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>elements</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>元件</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>exclusion</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>例外</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>execute</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>執行</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>extension</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>擴充套件</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>feedback</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>意見反應</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>filter</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>過濾</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>firmware</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>韌體</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>icon</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>圖示</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>local</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>本機</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>lock screen</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>鎖定螢幕</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>optimization</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>最佳化</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>optimize</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>最佳化</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>payment</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>付款</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>plugin</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>外掛</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>port</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>連接埠</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>profiles</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>設定檔</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>protection</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>防護</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>reboot</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>重新啟動</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>remove</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>刪除</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>restart</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>重新啟動</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>run</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>執行</term></tig></langSet>
+            </termEntry>
+            <termEntry>
                 <langSet xml:lang="en"><tig><term>Scanlator</term></tig></langSet>
                 <langSet xml:lang="zh_Hant"><tig><term>掃譯者</term></tig></langSet>
                 <note from="translator">參見 https://w.wiki/98EU</note>
             </termEntry>
             <termEntry>
-                <langSet xml:lang="en"><tig><term>backup</term></tig></langSet>
-                <langSet xml:lang="zh_Hant"><tig><term>備份</term></tig></langSet>
+                <langSet xml:lang="en"><tig><term>server address</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>伺服器位址</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>settings</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>設定</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>setup</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>設定</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>source code</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>原始碼</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>subscriber</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>訂閱者</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>uninstall</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>解除安裝</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>user</term></tig></langSet>
+                <langSet xml:lang="zh_Hant"><tig><term>使用者</term></tig></langSet>
             </termEntry>
         </body>
     </text>
