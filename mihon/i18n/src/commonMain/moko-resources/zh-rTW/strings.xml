@@ -141,9 +141,6 @@
     <string name="copy">副本</string>
     <string name="update_check_confirm">下載</string>
     <string name="update_check_no_new_updates">沒有可用的更新</string>
-    <string name="update_check_notification_download_in_progress">正在下載更新…</string>
-    <string name="update_check_notification_download_complete">輕觸即可更新</string>
-    <string name="update_check_notification_download_error">更新下載失敗</string>
     <string name="update_check_notification_update_available">有可用的更新！</string>
     <string name="information_no_downloads">尚無下載作業</string>
     <string name="download_notifier_title_error">錯誤</string>
@@ -348,8 +345,6 @@
     <string name="pref_show_reading_mode">閱讀模式提示</string>
     <string name="label_sources">來源</string>
     <string name="pref_webtoon_side_padding">頁緣留白</string>
-    <string name="pref_webtoon_vertical_navigator">對長條閱讀模式使用垂直導航器</string>
-    <string name="pref_webtoon_vertical_navigator_on_left">將垂直導航器設於左側</string>
     <string name="add_tracking">新增閱讀歷程</string>
     <string name="channel_new_chapters">章節更新</string>
     <string name="in_library">在書櫃中</string>
@@ -542,7 +537,6 @@
     <string name="update_72hour">每 3 天</string>
     <string name="download_queue_size_warning">警告：大量批次下載可能壅塞來源，甚至使其封鎖 %s，輕觸以瞭解詳情</string>
     <string name="ext_update_all">全部更新</string>
-    <string name="channel_app_updates">應用程式更新</string>
     <string name="pref_auto_clear_chapter_cache">啟動應用程式時清除章節快取</string>
     <string name="clear_database_source_item_count">資料庫中有 %1$d 部作品未加入書櫃</string>
     <string name="database_clean">無須清理</string>
@@ -768,16 +762,6 @@
     <string name="ext_revoke_trust">復原對不明擴充套件的信任</string>
     <string name="manga_interval_expected_update_soon">即將</string>
     <string name="action_open_repo">開啟來源儲存庫</string>
-    <string name="extensionStores">擴充套件商店</string>
-    <string name="action.addExtensionStore">新增擴充套件商店</string>
-    <string name="extensionStoresScreen.emptyLabel">你尚未新增任何擴充套件商店</string>
-    <string name="extensionStoresScreen.addStore.title">新增擴充套件商店</string>
-    <string name="extensionStoresScreen.addStore.alreadyExists">此擴充套件商店已存在</string>
-    <string name="extensionStoresScreen.addStore.processing">正在處理…</string>
-    <string name="extensionStoresScreen.addStoreInput.inputLabel">商店索引網址</string>
-    <string name="extensionStoresScreen.addStoreDeeplink.bodyText">你是否要新增下方的擴充套件商店？</string>
-    <string name="extensionStoresScreen.deleteStore.title">刪除擴充套件商店</string>
-    <string name="extensionStoresScreen.deleteStore.body">你是否要刪除擴充套件商店「%1$s」(%2$s)？</string>
     <string name="pref_webtoon_disable_zoom_out">停用縮小</string>
     <string name="pref_display_profile">自訂顯示設定檔</string>
     <string name="action_add_anyway">仍要新增</string>
@@ -910,4 +894,15 @@
     <string name="donationCampaign.paragraph2">您可以透過 Patreon（建議優先使用）或 OpenCollective 進行贊助。如果有任何問題，或希望透過其他方式支持，歡迎透過 Mihon 的 Discord 伺服器與我聯繫。</string>
     <string name="donationCampaign.paragraph3">無論是否贊助，Mihon 都會持續由我與志工維護，並且維持開源。</string>
     <string name="donationCampaign.dismiss">關閉</string>
+    <string name="extensionStores">擴充套件商店</string>
+    <string name="action.addExtensionStore">新增擴充套件商店</string>
+    <string name="extensionStoresScreen.emptyLabel">你尚未新增任何擴充套件商店</string>
+    <string name="extensionStoresScreen.addStore.title">新增擴充套件商店</string>
+    <string name="extensionStoresScreen.addStore.alreadyExists">此擴充套件商店已存在</string>
+    <string name="extensionStoresScreen.addStore.processing">正在處理…</string>
+    <string name="extensionStoresScreen.addStoreInput.inputLabel">商店索引網址</string>
+    <string name="extensionStoresScreen.addStoreDeeplink.bodyText">你是否要新增下方的擴充套件商店？</string>
+    <string name="extensionStoresScreen.deleteStore.title">刪除擴充套件商店</string>
+    <string name="extensionStoresScreen.deleteStore.body">你是否要刪除擴充套件商店「%1$s」(%2$s)？</string>
+    <string name="pref_webtoon_vertical_navigator_on_left">將垂直導航器設於左側</string>
 </resources>
