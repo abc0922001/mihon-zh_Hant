@@ -1,90 +1,148 @@
-# Mihon & TachiyomiSY 繁體中文翻譯與校對指南 (GEMINI.md)
+# Mihon & 分支專案繁體中文（台灣）在地化與翻譯指南 (GEMINI.md)
 
-本專案是一個開源程式翻譯專案，主要負責將來源字串翻譯為符合台灣習慣的繁體中文（正體中文）。為了維持軟體介面的穩定性、品質與語意一致性，所有參與翻譯與自動化校對的代理程式（如 Google Antigravity）與協作者皆須遵守以下規範。
+本專案 (`mihon-zh_Hant`) 為開源漫畫閱讀器 **Mihon** 以及其衍生分支版本（**TachiyomiSY**、**TachiyomiJ2K**）的繁體中文（台灣，`zh-TW` / `zh-rTW` / `zh_Hant`）在地化專案。
 
----
-
-## 1. 格式與 Key 完整性規則 (Format & Key Integrity Rules)
-
-為確保程式編譯正常且介面不毀損，必須嚴格遵守以下格式保護規則：
-
-*   **保持 Key 不變**：無論是 JSON、PO、YAML、XML (Moko Resources) 或 TBX 格式，嚴格禁止修改或翻譯 Key 值（如 XML 中的 `<string name="keep_this_key">` 中的 `name` 屬性）。
-*   **格式化變數/佔位符保護**：**絕對不能**翻譯、修改或調整格式化變數的位置與格式（例如：`%s`、`%d`、`%1$s`、`%2$d`、`{0}`、`{username}` 等）。
-*   **HTML 標籤與跳脫字元**：
-    *   保留所有 HTML 標籤（如 `<b>`、`<i>`、`<u>`、`<br/>` ）。
-    *   依據檔案格式正確進行跳脫。以 XML 為例：單引號 `'` 必須跳脫為 `\'`；雙引號 `"` 必須跳脫為 `\"`；和號 `&` 必須轉義為 `&amp;`。
-*   **1:1 結構對齊**：翻譯檔與原始語言檔（通常為 `base/strings.xml`）必須維持 1:1 的對應關係，切勿合併、拆分或遺漏任何翻譯項目。
+本指南定義了專案結構、檔案規格、術語字典、格式跳脫規則以及 AI 協作校對標準，供所有貢獻者與 AI 代理程式（如 Google Antigravity / Gemini）遵循。
 
 ---
 
-## 2. 台灣正體中文翻譯風格指引 (Traditional Chinese (Taiwan) Style Guide)
+## 1. 專案架構與目錄規範
 
-為求使用者體驗自然流暢，請嚴格遵守台灣在地化（zh-TW / zh-rTW）用語標準：
+專案針對不同上游軟體採用各自對應的在地化資源架構：
 
-### 2.1 術語對照表 (Strict Terminology Guardrails)
-必須優先參考專案內的術語庫：[glossary/zh_Hant.tbx](file:///C:/Users/DIDI/Documents/Git/mihon-zh_Hant/glossary/zh_Hant.tbx)（例如 `Scanlator` 應翻譯為 `掃譯者`，`backup` 應翻譯為 `備份`）。以下為常見詞彙之對照表，請嚴格遵守，禁止使用非台灣習慣的同義詞（如用「優化」代替「最佳化」）：
-
-| 英文原詞 (English) | 台灣繁體中文 (zh-TW) | 禁用詞彙 (Mainland Chinese or others) |
-| :--- | :--- | :--- |
-| App | 應用程式 | 應用、App |
-| optimize / optimization | 最佳化 | 優化 |
-| uninstall | 解除安裝 | 卸載 |
-| settings / setup / configure | 設定 | 設置 |
-| plugin | 外掛 | 插件 |
-| background | 背景 | 後台 |
-| run / execute | 執行 | 運行 |
-| reboot / restart | 重新啟動 | 重啟 |
-| lock screen | 鎖定螢幕 | 鎖屏 |
-| icon | 圖示 | 圖標 |
-| filter | 過濾 / 過濾器 | 篩選 / 濾鏡 |
-| user | 使用者 | 用戶 |
-| local | 本機 | 本地 |
-| firmware | 韌體 | 固件 |
-| server address | 伺服器位址 | 服務器地址 |
-| debug | 偵錯 | 調試 |
-| domain | 網域 | 域名 |
-| exclusion | 例外 | 排除 |
-| protection | 防護 | 保護 |
-| payment | 付款 | 支付 |
-| subscriber | 訂閱者 | 訂閱人 |
-| network | 網路 | 網絡 |
-| extension | 擴充功能 | 擴展 |
-| remove / delete | 刪除 | 移除 |
-| elements | 元件 | 元素 |
-| block / blocked | 封鎖 / 已封鎖 | 屏蔽 / 已屏蔽 |
-| port | 連接埠 | 端口 |
-| feedback | 意見反應 | 反饋 |
-| certificate / CA | 憑證 / 憑證授權單位 | 證書 / 證書授權中心 |
-| profiles | 設定檔 | 配置、檔案 |
-| code / source code | 程式碼 / 原始碼 | 代碼 / 源代碼 |
-
-### 2.2 句型重構與去翻譯腔 (Syntax & De-translationese)
-*   **避免冗餘字眼**：不使用「進行...的動作」、「作為一個...的動作」等冗贅句型。
-*   **語意流暢**：中文敘述應符合台灣人的口語習慣，以主動句為主，少用「被」字句（被動式）。
-*   **全形標點符號**：中文句子一律使用全形標點符號（，。？！），並使用頓號（、）分隔並列詞彙。
-
----
-
-## 3. 如何使用 `agy` 進行翻譯校對 (How to use `agy` for Proofreading)
-
-Google Antigravity CLI (`agy`) 是此專案推薦的 AI 翻譯校對工具，能讀取本文件並自動完成檔案比對與詞彙校正。
-
-### 3.1 啟動 `agy`
-在專案根目錄下打開終端機，執行：
-```bash
-agy
+```text
+mihon-zh_Hant/
+├── glossary/
+│   └── zh_Hant.tbx                     # TBX (ISO 12200) 格式之術語對照庫
+├── mihon/                              # Mihon 主專案 (基於 Moko Resources)
+│   └── i18n/src/commonMain/moko-resources/
+│       ├── base/                       # 英文來源 (strings.xml, plurals.xml)
+│       └── zh-rTW/                     # 台灣繁體中文 (strings.xml, plurals.xml)
+├── tachiyomisy/                        # TachiyomiSY 分支 (基於 Moko Resources)
+│   └── i18n-sy/src/commonMain/moko-resources/
+│       ├── base/                       # 英文來源 (strings.xml, plurals.xml)
+│       └── zh-rTW/                     # 台灣繁體中文 (strings.xml, plurals.xml)
+├── tachiyomij2k/                       # TachiyomiJ2K 分支 (Android 原生 Resource)
+│   └── app/src/main/res/
+│       ├── values/                     # 英文來源 (strings.xml)
+│       └── values-zh-rTW/              # 台灣繁體中文 (strings.xml)
+└── GEMINI.md                           # 本專案知識庫與 AI 協作規範
 ```
 
-### 3.2 常用校對指令範例
-在 `agy` TUI 介面中，可使用自然語言直接指揮 AI 執行任務：
+### 1.1 資源架構特點
+*   **Moko Resources (`mihon`, `tachiyomisy`)**：
+    *   路徑為 `src/commonMain/moko-resources/<locale>/`。
+    *   基準語言位於 `base/`，繁體中文位於 `zh-rTW/`。
+    *   支援 `strings.xml` 與 `plurals.xml`。
+*   **Android Native Resources (`tachiyomij2k`)**：
+    *   路徑為 `app/src/main/res/values<qualifier>/`。
+    *   基準語言位於 `values/`，繁體中文位於 `values-zh-rTW/`。
+*   **術語庫 (`glossary/zh_Hant.tbx`)**：
+    *   採用標準 TBX (TermBase eXchange) XML 格式，記錄專有名詞（如 `Scanlator` 譯為 `掃譯者`）。
 
-*   **指定檔案校對**：
-    > 「請幫我校對 [zh-rTW/strings.xml](file:///C:/Users/DIDI/Documents/Git/mihon-zh_Hant/mihon/i18n/src/commonMain/moko-resources/zh-rTW/strings.xml)，並比對 [base/strings.xml](file:///C:/Users/DIDI/Documents/Git/mihon-zh_Hant/mihon/i18n/src/commonMain/moko-resources/base/strings.xml) 確認變數格式是否一致。」
-*   **全專案翻譯審查**：
-    > 「請依據 GEMINI.md 的規格，校對專案中所有的翻譯檔案，找出不符合台灣正體中文或格式損壞的地方並修正。」
+---
 
-### 3.3 輔助校對的 `agy` Slash Commands
-*   `/context`：確認當前 AI 載入的語境是否包含目標翻譯檔案及術語庫 [glossary/zh_Hant.tbx](file:///C:/Users/DIDI/Documents/Git/mihon-zh_Hant/glossary/zh_Hant.tbx)。
-*   `/diff`：即時預覽所有 AI 修改後的字串差異，確認格式與排版是否完好。
-*   `/skills`：確認翻譯相關的技能（如 `android-l10n-zh-tw`、`translator-zh-tw`）已正確啟用。
-*   `/rewind`（或 `/undo`）：若對 AI 調整後的譯文不滿意，可用此指令回滾到前一個對話狀態。
+## 2. 格式完整性與跳脫規則 (Format & Integrity Guardrails)
+
+為避免編譯失敗、應用程式閃退或介面版面錯亂，必須嚴格落實以下技術限制：
+
+### 2.1 Key 值與標籤保護
+*   **禁止修改 Key 名稱**：`<string name="...">` 或 `<plurals name="...">` 中的 `name` 屬性必須與來源檔完全一致，絕不能翻譯或修改。
+*   **保留非翻譯屬性**：若標籤包含 `translatable="false"` 或格式化相關屬性，需依照來源檔規範保留。
+
+### 2.2 格式化佔位符保護 (Format Specifiers)
+*   **絕對禁止翻譯或變更佔位符結構**：包含 `%s`、`%d`、`%1$s`、`%2$d`、`%1$d`、`%.2f`、`{0}` 等。
+*   **保留順序標記**：當句子中包含多個變數時，確保數字引號（如 `%1$s`、`%2$s`）對應正確的來源語意。
+
+### 2.3 XML 特殊字元與跳脫規則 (Escaping)
+*   **單引號 (`'`)**：必須跳脫為 `\'`（例如：`Don\'t`）。
+*   **雙引號 (`"`)**：必須跳脫為 `\"`，或使用全形引號「」『』。
+*   **和號 (`&`)**：必須轉義為 `&amp;`。
+*   **小於 / 大於符號 (`<` / `>`)**：除 HTML 標籤外，需轉義為 `&lt;` 與 `&gt;`。
+*   **換行符號 (`\n`)**：保留換行控制碼 `\n`。
+*   **HTML 樣式標籤**：保留 `<b>`、`</b>`、`<i>`、`</i>`、`<u>`、`</u>`、`<tt>`、`</tt>` 等標籤，勿破壞閉合結構。
+
+### 2.4 複數規則 (`plurals.xml`)
+*   英文來源檔常包含 `quantity="one"` 與 `quantity="other"`。
+*   在繁體中文 (`zh-rTW`) 語法中，通常只需保留 `<item quantity="other">` 項目，除非特定語境需要對特定數量做個別處理。
+
+---
+
+## 3. 台灣繁體中文 (zh-TW) 在地化風格與術語表
+
+翻譯必須符合台灣本土用語習慣（Seamless Localization），杜絕非台灣習慣詞彙與機器翻譯腔。
+
+### 3.1 核心術語對照表 (Strict Terminology Guardrails)
+
+| 英文術語 (English) | 台灣繁體中文 (zh-TW) | 禁用詞彙 / 簡中習慣 (Forbidden) |
+| :--- | :--- | :--- |
+| **App** | 應用程式 | 應用、App |
+| **Optimize / Optimization** | 最佳化 | 優化 |
+| **Uninstall** | 解除安裝 | 卸載 |
+| **Settings / Setup / Configure** | 設定 | 設置、配置 |
+| **Plugin** | 外掛 | 插件 |
+| **Extension** | 擴充功能 | 擴展、插件 |
+| **Background** | 背景 | 後台 |
+| **Run / Execute** | 執行 | 運行 |
+| **Reboot / Restart** | 重新啟動 | 重啟 |
+| **Lock Screen** | 鎖定螢幕 | 鎖屏 |
+| **Icon** | 圖示 | 圖標 |
+| **Filter / Filtering** | 過濾 / 過濾器 | 篩選 / 濾鏡 |
+| **User** | 使用者 | 用戶 |
+| **Local** | 本機 | 本地 |
+| **Firmware** | 韌體 | 固件 |
+| **Server Address** | 伺服器位址 | 服務器地址 |
+| **Debug** | 偵錯 | 調試 |
+| **Domain** | 網域 | 域名 |
+| **Exclusion** | 例外 | 排除 |
+| **Protection** | 防護 | 保護 |
+| **Payment** | 付款 | 支付 |
+| **Subscriber(s)** | 訂閱者 | 訂閱人 |
+| **Network** | 網路 | 網絡 |
+| **Remove / Delete** | 刪除 | 移除 (依情境)、抹除 |
+| **Elements** | 元件 | 元素 |
+| **Block / Blocked** | 封鎖 / 已封鎖 | 屏蔽 / 已屏蔽 |
+| **Port** | 連接埠 | 端口 |
+| **Feedback** | 意見反應 | 反饋 |
+| **Certificate / CA** | 憑證 / 憑證授權單位 | 證書 / 證書授權中心 |
+| **Profiles** | 設定檔 | 配置、檔案 |
+| **Code / Source Code** | 程式碼 / 原始碼 | 代碼 / 源代碼 |
+| **Scanlator** | 掃譯者 | 漢化組、掃描者 |
+| **Library** | 圖庫 / 書庫 | 書架、資源庫 |
+| **Backup** | 備份 | 後備 |
+| **Restore** | 還原 | 恢復 |
+| **Track / Tracker** | 追蹤 / 追蹤器 (平台) | 記錄、同步器 |
+| **Categories** | 類別 | 分類 |
+| **Migrate / Migration** | 移轉 | 遷移 |
+| **Cache** | 快取 | 緩存 |
+| **Default** | 預設 | 默認 |
+| **Interface** | 介面 | 界面 |
+| **Display** | 顯示 | 屏幕、展現 |
+| **Resolution** | 解析度 | 分辨率 |
+
+### 3.2 語法與去翻譯腔 (De-translationese)
+1.  **句型重組**：打破過長的從屬子句，依據中文「先因後果」、「先背景後重點」的敘事習慣重組。
+2.  **避免冗贅動詞**：刪除「進行...的動作」、「作為一個...」等冗詞。
+3.  **主動語態為主**：減少「被」字句（被動語態），改用自然主動句。
+4.  **全形標點符號**：
+    *   中文語境一律使用全形標點（`，`、`。`、`！`、`？`、`：`、`；`）。
+    *   列舉並列名詞時使用頓號（`、`）。
+    *   英文專有名詞、版本號與數字前後保留適當空格以增進閱讀體驗。
+
+---
+
+## 4. AI 自動化校對與維護工作流程
+
+使用 Google Antigravity CLI (`agy`) 或 IDE 進行日常翻譯維護時，建議的工作流程如下：
+
+### 4.1 校對檢查清單 (Validation Checklist)
+1.  **缺失 Key 補齊**：比對 `base/strings.xml` (或 `values/strings.xml`) 與 `zh-rTW` 檔案，確保無遺漏條目。
+2.  **佔位符核對**：確認所有 `%s`、`%d`、`%1$s` 數量與編號完全吻合。
+3.  **跳脫符號檢查**：確認英文單引號 `'` 均已跳脫為 `\'`，XML 特殊字元（`&` 等）已正確轉義。
+4.  **用語一致性**：對齊本文件之術語表與 `glossary/zh_Hant.tbx`。
+
+### 4.2 常用指令與操作
+*   **比對與翻譯**：
+    > 「請檢查 [tachiyomij2k/app/src/main/res/values-zh-rTW/strings.xml](file:///C:/Users/DIDI/Documents/Git/mihon-zh_Hant/tachiyomij2k/app/src/main/res/values-zh-rTW/strings.xml) 是否缺少 [values/strings.xml](file:///C:/Users/DIDI/Documents/Git/mihon-zh_Hant/tachiyomij2k/app/src/main/res/values/strings.xml) 中的 Key，並依據 GEMINI.md 翻譯缺失字串。」
+*   **術語庫更新**：
+    若建立新的專用名詞譯法，同步將詞條補入 [glossary/zh_Hant.tbx](file:///C:/Users/DIDI/Documents/Git/mihon-zh_Hant/glossary/zh_Hant.tbx)。
